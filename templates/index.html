@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Home - Portfolio{% endblock %}
+
+{% block content %}
+<div class="text-center py-16">
+    <h1 class="text-5xl font-bold">
+        <span id="typing-text" class="text-blue-600"></span>
+    </h1>
+    <p class="mt-4 text-lg text-gray-700 opacity-80">A passionate developer building modern web experiences.</p>
+
+    <a href="/projects" class="mt-6 inline-block px-8 py-4 bg-blue-600 text-lg font-bold rounded-lg shadow-lg transition-all duration-300 hover:scale-110 hover:bg-blue-700">
+        View My Work
+    </a>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const text = "Welcome to My Portfolio";
+        let index = 0;
+        function typeText() {
+            if (index < text.length) {
+                document.getElementById("typing-text").textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, 100);
+            }
+        }
+        typeText();
+    });
+</script>
+
+{% endblock %}

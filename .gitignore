@@ -1,0 +1,7 @@
+__pycache__/
+website/
+*.pyc
+*.pyo
+*.pyd
+.env
+*.env

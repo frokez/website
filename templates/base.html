@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfolio{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <nav class="bg-blue-600 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <!-- GitHub and LinkedIn Icons -->
+                <a href="https://github.com/frokez" target="_blank">
+                    <img src="/static/images/github.png" alt="GitHub" class="w-8 h-8">
+                </a>
+                <a href="https://www.linkedin.com/in/luca-menabde-90a701339/" target="_blank">
+                    <img src="/static/images/linkedin.png" alt="LinkedIn" class="w-8 h-8">
+                </a>
+
+                <!-- Portfolio Name -->
+                <a href="/" class="text-white text-xl font-bold">Luca Menabde</a>
+            </div>
+
+            <div class="space-x-4">
+                <a href="/" class="text-white hover:underline">Home</a>
+                <a href="/about" class="text-white hover:underline">About</a>
+                <a href="/projects" class="text-white hover:underline">Projects</a>
+                <a href="/contact" class="text-white hover:underline">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto my-8 px-4">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold text-center mb-8">My Projects</h1>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {% for project in projects %}
+    <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-blue-500 hover:text-white">
+
+        <!-- Images Side-by-Side -->
+        {% if project.images|length > 1 %}
+        <div class="flex flex-row space-x-4 mb-4">
+            {% for image in project.images %}
+            <img src="{{ url_for('static', filename=image) }}"
+                 alt="{{ project.title }}"
+                 class="rounded-lg object-cover w-1/2 h-48 transition-opacity duration-300 hover:opacity-75">
+            {% endfor %}
+        </div>
+        {% else %}
+        <img src="{{ url_for('static', filename=project.images[0]) }}"
+             alt="{{ project.title }}"
+             class="rounded-lg w-full h-48 object-cover mb-4 transition-opacity duration-300 hover:opacity-75">
+        {% endif %}
+
+        <!-- Title & Description -->
+        <h2 class="text-xl font-bold">{{ project.title }}</h2>
+        <p class="mt-2 text-sm">{{ project.description }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
