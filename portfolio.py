@@ -25,9 +25,9 @@ def projects():
             'link': 'https://lucamenastockriskanalyzer.streamlit.app'
         },
         {
-            'title': 'Project 3',
-            'description': 'Description of project 3',
-            'images': ['images/project3.jpg']
+            'title': 'Deep Q-Learning Snake Agent',
+            'description': 'An autonomous Snake-playing agent built using Deep Q-Learning with experience replay and target networks. Trained in a pygame environment, the agent learns to maximize survival and food collection through a neural network approximating Q-values. Built with PyTorch, the model trains over 1000+ episodes. Performance is visualized with score tracking and evaluated through fully greedy policy runs.',
+            'images': ['images/snakeML.png']
         },
         {
             'title': 'Project 4',
